@@ -1,0 +1,24 @@
+{
+	"Version": "2012-10-17",
+	"Id": "Policy1463904182882",
+	"Statement": [
+		{
+			"Sid": "Stmt1463904178865",
+			"Effect": "Allow",
+			"Principal": "*",
+			"Action": "s3:*",
+			"Resource": [
+				"arn:aws:s3:::marcotedone-devopsbuddy-config/*",
+				"arn:aws:s3:::marcotedone-devopsbuddy-config"
+			],
+			"Condition": {
+				"IpAddress": {
+					"aws:SourceIp": "81.132.44.198/32"
+				},
+				"StringEquals": {
+					"aws:sourceVpc": "vpc-37fa3453"
+				}
+			}
+		}
+	]
+}
